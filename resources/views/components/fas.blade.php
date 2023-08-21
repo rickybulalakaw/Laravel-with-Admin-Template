@@ -1,0 +1,1 @@
+<i {!! $attributes->merge(['class' => ' text-xl   shrink-0 '.$class]) !!} ></i> 
