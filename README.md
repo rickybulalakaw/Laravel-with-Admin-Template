@@ -44,6 +44,10 @@ php artisan sail:install
 ```
 
 7. Run the containers.
+```
+sail up -d
+```
+
 8. Generate application key: 
 
 ```
