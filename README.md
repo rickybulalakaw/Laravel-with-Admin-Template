@@ -23,7 +23,13 @@ cp .env.example .env
 
 5. Make adjustments to your .env file, such as the name of the database and the username and password to access it. 
 
-6. Test edit
+6. If installing in a Linux OS, create a vendor folder: 
+```
+mkdir vendor
+```
+
+Then change the access rights to allow writing to the following folders: vendor, storage, and bootstrap. 
+
 6. Install Laravel Sail
 ```
 docker run --rm \
