@@ -22,6 +22,8 @@ cp .env.example .env
 ```
 
 5. Make adjustments to your .env file, such as the name of the database and the username and password to access it. 
+
+6. Test edit
 6. Install Laravel Sail
 ```
 docker run --rm \
