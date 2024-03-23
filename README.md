@@ -2,7 +2,16 @@
 
 This is a fork of [Mosaic Lite Travel] (https://github.com/cruip/laravel-tailwindcss-admin-dashboard-template)
 
-## Deployment Details 
+## Initial Features 
+
+1. Modified users table linked to positions and offices table for user-office relationship 
+2. Uses MFA using Google Authenticator 
+
+## Deployment Options 
+
+There are two ways you can deploy this: With Docker or on the host using Composer and NPM. 
+
+# Deployment Details with Docker Using Laravel Sail
 
 The system uses Laravel's Sail package. Thus, the production host should have Docker Engine installed. 
 
@@ -112,6 +121,102 @@ git commit -m "initial commit"
 ```
 
 14. Create online repository and follow instructions for pushing local repository. 
+15. Build your own code! 
+
+
+# Deployment on the Host with Composer and NPM 
+
+This method requires that you have the following on the host: 
+
+* PHP 8.++
+* Composer
+* NPM and 
+* MySQL 
+
+1. Clone the repository in your machine.
+
+Depending on your operating system, you may need to change ownership and access rights of files in your folder to allow write.
+
+3. Go to the project folder. 
+4. Copy the env.example file to .env 
+
+```
+cp .env.example .env
+```
+
+5. Make adjustments to your .env file, such as the host and name of the database and the username and password to access it. 
+
+6. If installing in a Linux OS, create a vendor folder: 
+```
+mkdir vendor
+```
+
+7. Generate application key: 
+
+```
+php artisan key:generate
+```
+
+8. Make sure to run MySQL or your database server. 
+
+9. Run migration 
+
+```
+php artisan migrate
+```
+
+10. Install NPM packages 
+
+```
+npm install
+```
+
+```
+npm run build
+``` 
+
+or 
+
+```
+npm run build -- --watch
+```
+_The "watch" switch will make the "build" run interactively so that any new classes you create will be re-built._
+
+Test if you could access your project by deploying your project: 
+
+```
+php artisan serve 
+```
+
+Access your project in your browser in 127.0.0.1:8000 (or whatever is displayed in the terminal). 
+
+11. Remove excess code, such as extra controllers, migration files, and models.
+
+12. Delete the .git folder.  
+_This steps is needed to remove previous repository history as you will create a new repository for your own project._
+
+```
+sudo rm -R .git
+```
+
+13. Create your own .git repository for pushing to Github or other GIT Server.
+
+```
+git init
+```
+
+```
+git add . 
+```
+_Take note of the period at the end which means add everything from this directory and its sub-directories._
+
+
+```
+git commit -m "initial commit"
+```
+
+14. Create online repository and follow instructions for pushing local repository. 
+
 15. Build your own code! 
 
 
