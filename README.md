@@ -133,6 +133,8 @@ This method requires that you have the following on the host:
 * NPM and 
 * MySQL 
 
+*Reminder: This option runs Laravel without other services available in the Docker option, such as Mailpit and PHPMYADMIN.*
+
 1. Clone the repository in your machine.
 
 Depending on your operating system, you may need to change ownership and access rights of files in your folder to allow write.
